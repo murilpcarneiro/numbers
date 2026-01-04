@@ -1,0 +1,47 @@
+.message-container {
+  margin-bottom: 1.25rem;
+  display: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  line-height: 150%;
+  animation: slideDown 0.3s ease-out;
+
+  &.show {
+    display: block;
+  }
+
+  &.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid #ef4444;
+    color: #fca5a5;
+
+    &::before {
+      content: '❌ ';
+      font-weight: 700;
+    }
+  }
+
+  &.success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-left: 4px solid #22c55e;
+    color: #86efac;
+
+    &::before {
+      content: '✅ ';
+      font-weight: 700;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
