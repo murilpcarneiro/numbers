@@ -1,0 +1,240 @@
+#results {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  & .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+
+    & h2 {
+      font-family: 'Roboto Flex', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    & p {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--content-secondary);
+      line-height: 150%;
+    }
+  }
+
+  & .content-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    min-height: 120px;
+    width: 100%;
+    flex-wrap: wrap;
+
+    & .result-number {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 150%;
+      color: var(--color-inverse);
+      position: relative;
+      opacity: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      animation: fadeIn 1.6s 1s ease-in-out forwards,
+        colorChange 2.6s ease-in-out forwards;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: var(--content-brand);
+        border-radius: 28px;
+        z-index: -1;
+        animation: popIn 2.6s ease-in-out forwards;
+      }
+
+      & span {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Delays para cada número em sequência */
+      &:nth-child(1) {
+        --position: 0;
+      }
+
+      &:nth-child(2) {
+        --position: 1;
+        animation-delay: 3.6s, 2.6s, 6.2s;
+        &::before {
+          animation-delay: 2.6s;
+        }
+      }
+
+      &:nth-child(3) {
+        --position: 2;
+        animation-delay: 6.2s, 5.2s, 8.8s;
+        &::before {
+          animation-delay: 5.2s;
+        }
+      }
+
+      &:nth-child(4) {
+        --position: 3;
+        animation-delay: 8.8s, 7.8s, 11.4s;
+        &::before {
+          animation-delay: 7.8s;
+        }
+      }
+
+      &:nth-child(5) {
+        --position: 4;
+        animation-delay: 11.4s, 10.4s, 14s;
+        &::before {
+          animation-delay: 10.4s;
+        }
+      }
+
+      &:nth-child(6) {
+        --position: 5;
+        animation-delay: 14s, 13s, 16.6s;
+        &::before {
+          animation-delay: 13s;
+        }
+      }
+
+      &:nth-child(7) {
+        --position: 6;
+        animation-delay: 16.6s, 15.6s, 19.2s;
+        &::before {
+          animation-delay: 15.6s;
+        }
+      }
+
+      &:nth-child(8) {
+        --position: 7;
+        animation-delay: 19.2s, 18.2s, 21.8s;
+        &::before {
+          animation-delay: 18.2s;
+        }
+      }
+
+      &:nth-child(9) {
+        --position: 8;
+        animation-delay: 21.8s, 20.8s, 24.4s;
+        &::before {
+          animation-delay: 20.8s;
+        }
+      }
+
+      &:nth-child(10) {
+        --position: 9;
+        animation-delay: 24.4s, 23.4s, 27s;
+        &::before {
+          animation-delay: 23.4s;
+        }
+      }
+    }
+  }
+
+  & button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 150%;
+    background-color: var(--background-tertiary);
+    color: var(--content-tertiary);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--background-quaternary);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: var(--color-inverse);
+  }
+  84.6% {
+    color: var(--color-inverse);
+  }
+  100% {
+    color: var(--content-brand);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  7.7% {
+    transform: scale(1.2) rotate(0deg);
+    opacity: 1;
+  }
+  15.4% {
+    transform: scale(1) rotate(18deg);
+  }
+  23.1% {
+    transform: scale(1) rotate(36deg);
+  }
+  30.8% {
+    transform: scale(1) rotate(54deg);
+  }
+  38.5% {
+    transform: scale(1) rotate(72deg);
+  }
+  46.2% {
+    transform: scale(1) rotate(90deg);
+  }
+  53.9% {
+    transform: scale(1) rotate(108deg);
+  }
+  61.6% {
+    transform: scale(1) rotate(126deg);
+  }
+  69.3% {
+    transform: scale(1) rotate(144deg);
+  }
+  77% {
+    transform: scale(1) rotate(162deg);
+  }
+  84.7% {
+    transform: scale(1) rotate(180deg);
+  }
+  92.4% {
+    transform: scale(1.1) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+}

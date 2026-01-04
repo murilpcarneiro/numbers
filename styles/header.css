@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.25rem;
+
+  & span {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 150%;
+    background: var(--gradient-content);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  & h1 {
+    margin-top: 0.25rem;
+  }
+}

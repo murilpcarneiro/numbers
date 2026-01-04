@@ -1,0 +1,71 @@
+:root {
+  /* Content */
+  --content-primary: #ffffff;
+  --content-secondary: #c7c9cc;
+  --content-tertiary: #d9d9d9;
+  --content-brand: #c58de7;
+  --color-inverse: #030203;
+
+  /* Background */
+  --background-primary: #020202;
+  --background-secondary: #111012;
+  --background-tertiary: #24222e;
+  --background-brand: #c58de7;
+  --background-gray: #3d3d3d;
+
+  /* Accent */
+  --accent-pink: #d586e0;
+  --accent-blue: #91a1fa;
+  --accent-green: #77c0a0;
+  --accent-lime: #d1dc97;
+  --accent-red: #e9a9b3;
+
+  /* Gradient */
+  --gradient-border: linear-gradient(
+    90deg,
+    #77c0af 0%,
+    #d1dc97 14.84%,
+    #e9a9b3 32.15%,
+    #d586e0 65.79%,
+    #91a1fa 84.58%
+  );
+  --gradient-background: linear-gradient(180deg, #d586e0 0%, #91a1fa 98.93%);
+  --gradient-content: linear-gradient(90deg, #c7c9cc 0%, #3d3d3d 100%);
+  --gradient-background-simple: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #020202;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.95) 100%
+    ),
+    url('../assets/Shapes1x.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center top;
+  background-size: cover, cover;
+  background-attachment: fixed, fixed;
+  color: var(--content-primary);
+  font-family: 'Sora', sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.hidden {
+  display: none !important;
+}
